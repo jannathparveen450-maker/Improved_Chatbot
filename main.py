@@ -5,9 +5,9 @@ import google.generativeai as gen_ai
 
 #Load API key 
 load_dotenv()
-if "GOOGLE_API_KEY" in st.secrets:
+try:
     GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
-else:
+except:
     load_dotenv()
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
